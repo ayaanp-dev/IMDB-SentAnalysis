@@ -24,4 +24,5 @@ model = Sequential([
 # print(model.summary())
 
 model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
-model.fit(x_train, y_train, epochs=500)
+model.fit(x_train, y_train, epochs=250, batch_size=64)
+model.save("model.h5")

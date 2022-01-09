@@ -1,1 +1,10 @@
 .idea
+env
+IMDB Dataset.csv
+model.h5
+x_test.npy
+x_train.npy
+y.npy
+y_test.npy
+y_train.npy
+X.npy

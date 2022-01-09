@@ -3,7 +3,9 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 
-x_train = np.load("X.npy")
+tf.config.list_physical_devices('GPU')
+
+x_train = np.load("x_train.npy")
 y_train = np.load("y.npy")
 
 x_train = np.asarray(x_train).astype(np.float32)
@@ -18,7 +20,7 @@ model = Sequential([
 	Dropout(0.1),
 	Dense(256, activation="relu"),
 	Dropout(0.2),
-	Dense(1, activation="softmax")
+	Dense(1, activation="sigmoid")
 ])
 
 # print(model.summary())
